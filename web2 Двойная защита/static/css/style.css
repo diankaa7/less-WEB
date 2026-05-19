@@ -1,0 +1,13 @@
+h4 {
+    color: #6c757d;
+    padding-left: 20px;
+}
+
+.emblem {
+    background-image: url('/static/images/emblem.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}

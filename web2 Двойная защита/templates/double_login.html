@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="emblem"></div>
+    <h2>Двойная аутентификация</h2>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.astronaut_id.label }}<br>
+            {{ form.astronaut_id(class="form-control") }}<br>
+            {% for error in form.astronaut_id.errors %}
+                <div class="alert alert-danger" role="alert">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.astronaut_password.label }}<br>
+            {{ form.astronaut_password(class="form-control", type="password") }}<br>
+            {% for error in form.astronaut_password.errors %}
+                <div class="alert alert-danger" role="alert">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.captain_id.label }}<br>
+            {{ form.captain_id(class="form-control") }}<br>
+            {% for error in form.captain_id.errors %}
+                <div class="alert alert-danger" role="alert">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.captain_token.label }}<br>
+            {{ form.captain_token(class="form-control", type="password") }}<br>
+            {% for error in form.captain_token.errors %}
+                <div class="alert alert-danger" role="alert">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    </form>
+{% endblock %}
